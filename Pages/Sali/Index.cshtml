@@ -1,0 +1,54 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Sali.IndexModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("SaliList");
+}
+
+<h1 id="Sali.List.Page">@language.Getkey("SaliList")</h1>
+
+<p>
+    <a id="Create.Sala.Page" asp-page="Create">@language.Getkey("AddSala")</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th id="Sala.Nume">
+                @language.Getkey("NumeSala")
+            </th>
+            <th id="Sala.Locatie">
+                @language.Getkey("Locatie")
+            </th>
+            <th id="Sala.Suprafata">
+                @language.Getkey("Suprafata (m2)")
+            </th>
+            <th id="Sala.Pret">
+                @language.Getkey("Pret (RON)")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Sala) {
+        <tr>
+            <td id="Sala.Nume.Value">
+                @Html.DisplayFor(modelItem => item.NumeSala)
+            </td>
+            <td id="Sala.Locatie.Value"> 
+                @Html.DisplayFor(modelItem => item.Locatie)
+            </td>
+            <td id="Sala.Suprafata.Value">
+                @Html.DisplayFor(modelItem => item.Suprafata)
+            </td>
+            <td id="Sala.Pret.Value">
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                <a id="Edit.Sala.Page.Lnk" asp-page="./Edit" asp-route-id="@item.ID">@language.Getkey("Edit")</a> |
+                <a id="Details.Sala.Page.Lnk" asp-page="./Details" asp-route-id="@item.ID">@language.Getkey("Detalii")</a> |
+                <a id="Delete.Sala.Page.Lnk" asp-page="./Delete" asp-route-id="@item.ID">@language.Getkey("Sterge")</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

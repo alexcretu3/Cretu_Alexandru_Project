@@ -1,0 +1,14 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = @language.Getkey("Title");
+}
+@inject LanguageService language
+
+<div class="text-center homepage">
+    <h1 class="display-4">@language.Getkey("Title")</h1>
+</div>
+<br />
+<div class="text-center">
+    <a id="Rezervare" asp-page="Rezervari/Create">@language.Getkey("HomeRezervare")</a>
+</div>

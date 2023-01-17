@@ -1,0 +1,46 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Sali.DeleteModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("Sterge");
+}
+
+<h1 id="Sterge.Sala.Page">@language.Getkey("Sterge")</h1>
+
+<h3>@language.Getkey("MesajSterge")</h3>
+<div>
+    <h4>Sala</h4>
+    <hr />
+    <dl class="row">
+        <dt id="Nume.Sala" class="col-sm-2">
+            @language.Getkey("NumeSala")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sala.NumeSala)
+        </dd>
+        <dt id="Locatie.Sala" class="col-sm-2">
+            @language.Getkey("Locatie")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sala.Locatie)
+        </dd>
+        <dt id="Suprafata.Sala" class="col-sm-2">
+            @language.Getkey("Suprafata (m2)")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sala.Suprafata)
+        </dd>
+        <dt id="Pret.Sala" class="col-sm-2">
+            @language.Getkey("Pret (RON)")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sala.Pret)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Sala.ID" />
+        <input id="Sterge.Sala.Btn" type="submit" value="@language.Getkey("Sterge")" class="btn btn-danger" /> |
+        <a id="Sala.Delete.Inapoi.Lnk" asp-page="./Index">@language.Getkey("Inapoi")</a>
+    </form>
+</div>

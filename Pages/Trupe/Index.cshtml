@@ -1,0 +1,52 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Trupe.IndexModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("TrupeList");
+}
+
+<h1>@language.Getkey("TrupeList")</h1>
+
+<p>
+    <a asp-page="Create">@language.Getkey("AddTrupa")</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @language.Getkey("Nume Trupa")
+            </th>
+            <th>
+                @language.Getkey("Numar Persoane")
+            </th>
+            <th>
+                @language.Getkey("Reprezentant")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Trupa) {
+        <tr>
+            <td id="Trupa.NumeTrupa.Value">
+                @Html.DisplayFor(modelItem => item.NumeTrupa)
+            </td>
+            <td id="Trupa.NumarPersoane.Value">
+                @Html.DisplayFor(modelItem => item.numarPersoane)
+            </td>
+            <td id="Trupa.Reprezentant.Value">
+                @Html.DisplayFor(modelItem => item.Reprezentant.FullName)
+            </td>
+            <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ID">@language.Getkey("Modifica")</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ID">@language.Getkey("Detalii")</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">@language.Getkey("Sterge")</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div class="form-group">
+<a class="btn btn-primary" asp-area="" asp-page="/Reprezentanti/Index">@language.Getkey("RepList")</a>
+</div>

@@ -1,0 +1,37 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Echipamente.DetailsModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("Detalii");
+}
+
+<h1 id="Detalii.Echipament.Page">@language.Getkey("Detalii")</h1>
+
+<div>
+    <h4>@language.Getkey("Echipament")</h4>
+    <hr />
+    <dl class="row">
+        <dt id="Tip.Echipament" class="col-sm-2">
+            @language.Getkey("TipEchipament")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Echipament.TipEchipament)
+        </dd>
+        <dt id="Instrumente.Echipament" class="col-sm-2">
+            @language.Getkey("Instrumente")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Echipament.Instrumente)
+        </dd>
+        <dt id="Pret.Echipament" class="col-sm-2">
+            @language.Getkey("Pret")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Echipament.Pret)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a id="Edit.Echipament.Btn" asp-page="./Edit" asp-route-id="@Model.Echipament?.ID">@language.Getkey("Edit")</a> |
+    <a id="Inapoi.Btn" asp-page="./Index">@language.Getkey("Inapoi")</a>
+</div>

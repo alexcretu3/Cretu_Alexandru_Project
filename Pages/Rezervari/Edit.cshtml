@@ -1,0 +1,118 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Rezervari.EditModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("Edit");
+}
+
+<h1>@language.Getkey("Edit")</h1>
+
+<h4>@language.Getkey("Rezervare")</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Rezervare.ID" />
+            <div class="form-group">
+                <label asp-for="Rezervare.SalaID" class="control-label">@language.Getkey("Nume Sala")</label>
+                <select asp-for="Rezervare.SalaID" class="form-control" asp-items="ViewBag.SalaID" onchange="updatePrice()" id="SalaID"></select>
+                <span id="SalaPrice"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.TrupaID" class="control-label">@language.Getkey("Nume Trupa")</label>
+                <select id="Rezervare.Nume.Trupa" asp-for="Rezervare.TrupaID" class="form-control" asp-items="ViewBag.TrupaID"></select>
+                <span asp-validation-for="Rezervare.TrupaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.EchipamentId" class="control-label">@language.Getkey("Tip Echipament")</label>
+                <select asp-for="Rezervare.EchipamentId" class="form-control" asp-items="ViewBag.EchipamentId" onchange="updatePrice()" id="EchipamentId"></select>
+                <span id="EchipamentPrice"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.DataInceput" class="control-label">@language.Getkey("Data Inceput")</label>
+                <input asp-for="Rezervare.DataInceput" class="form-control" id="DataInceput" name="Rezervare.DataInceput"
+                       min="@DateTime.Now.ToString("yyyy-MM-dd")"
+                       max="@DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.OraInceput" class="control-label">@language.Getkey("Ora Inceput")</label>
+                <input id="Rezervare.Ora.Inceput" asp-for="Rezervare.OraInceput"  class="form-control" />
+                <span asp-validation-for="Rezervare.OraInceput" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.Timp" class="control-label">@language.Getkey("Ore Dorite")</label>
+                <input asp-for="Rezervare.Timp" onchange="updatePrice()" id="Timp" class="form-control" />
+                <span asp-validation-for="Rezervare.Timp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rezervare.Pret" class="control-label">@language.Getkey("Pret (RON)")</label>
+                <input asp-for="Rezervare.Pret" class="form-control" id="Pret" readonly />
+                <span asp-validation-for="Rezervare.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input id="Edit.Rezervare.Btn" type="submit" value="@language.Getkey("Salveaza")" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a id="Sala.Edit.Inapoi.Lnk" asp-page="./Index">@language.Getkey("Inapoi")</a>
+</div>
+
+@section Scripts {
+    <script>
+        function convertToUTC(input) {
+            var date = new Date(input.value);
+            date.setUTCHours(date.getUTCHours() + 2);
+            input.value = date.toISOString().slice(0, -1);
+        }
+    </script>
+
+    <script>
+        function updatePrice() {
+            var url = '/API/GetPrice';
+            var salaId = $("#SalaID").val();
+            var echipamentId = $("#EchipamentId").val();
+            var timp = $("#Timp").val();
+            $.getJSON(url, { salaId: salaId, echipamentId: echipamentId }, function (data) {
+                var salaPrice = data.SalaPret;
+                var echipamentPrice = data.EchipamentPret;
+                var price = (salaPrice + echipamentPrice) * timp;
+                $("#Pret").val(price);
+                $("#SalaPrice").text("Pret sala (RON): " + salaPrice);
+                $("#EchipamentPrice").text("Pret echipament (RON): " + echipamentPrice);
+            });
+        }
+
+        $(document).ready(function () {
+
+            updatePrice();
+
+            $("#SalaID").change(function () {
+                salaId = $("#SalaID").val();
+                updatePrice();
+            });
+
+            $("#EchipamentId").change(function () {
+                echipamentId = $("#EchipamentId").val();
+                updatePrice();
+            });
+
+            $("#SalaID").change(function () {
+                updatePrice();
+            });
+
+            $("#EchipamentId").change(function () {
+                updatePrice();
+            });
+
+            $("#Timp").change(function () {
+                updatePrice();
+            });
+
+        });
+    </script>
+}
+

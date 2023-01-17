@@ -1,0 +1,37 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Trupe.DetailsModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("Detalii");
+}
+
+<h1 id="Detalii.Trupa.Page">@language.Getkey("Detalii")</h1>
+
+<div>
+    <h4>@language.Getkey("Trupa")</h4>
+    <hr />
+    <dl class="row">
+        <dt id="Nume.Trupa" class="col-sm-2">
+            @language.Getkey("NumeTrupa")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trupa.NumeTrupa)
+        </dd>
+        <dt id="Numar.Trupa" class="col-sm-2">
+            @language.Getkey("NumarPersoane")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trupa.numarPersoane)
+        </dd>
+        <dt id="Nume.Reprezentant" class="col-sm-2">
+            @language.Getkey("Reprezentant")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Trupa.Reprezentant.FullName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a id="Edit.Btn" asp-page="./Edit" asp-route-id="@Model.Trupa?.ID">@language.Getkey("Modifica")</a> |
+    <a id="Inapoi.Btn" asp-page="./Index">@language.Getkey("Inapoi")</a>
+</div>

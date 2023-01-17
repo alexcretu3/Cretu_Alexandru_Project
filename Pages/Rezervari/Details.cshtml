@@ -1,0 +1,55 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Rezervari.DetailsModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("Detalii");
+}
+
+<h1 id="Rezervare.Detalii.Page">@language.Getkey("Detalii")</h1>
+
+<div>
+    <h4>@language.Getkey("Rezervare")</h4>
+    <hr />
+    <dl class="row">
+        <dt id="Rezervare.Nume.Sala" class="col-sm-2" >
+            @language.Getkey("Nume Sala")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Sala.NumeSala)
+        </dd>
+        <dt id="Rezervare.Nume.Trupa" class="col-sm-2">
+            @language.Getkey("Nume Trupa")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Trupa.NumeTrupa)
+        </dd>
+        <dt id="Rezervare.Data.Inceput" class="col-sm-2">
+            @language.Getkey("Data Inceput")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.DataInceput)
+        </dd>
+        <dt id="Rezervare.Ora.Inceput" class="col-sm-2">
+            @language.Getkey("Ora Inceput")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.OraInceput)
+        </dd>
+        <dt id="Rezervare.Timp" class="col-sm-2">
+            @language.Getkey("Ore Dorite")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Timp)
+        </dd>
+        <dt id="Rezervare.Pret" class="col-sm-2">
+            @language.Getkey("Pret (RON)")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Rezervare.Pret)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a id="Rezervare.Page.Edit.Lnk" asp-page="./Edit" asp-route-id="@Model.Rezervare?.ID">@language.Getkey("Edit")</a> |
+    <a id="Rezervare.Details.Inapoi.Lnk" asp-page="./Index">@language.Getkey("Inapoi")</a>
+</div>

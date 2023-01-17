@@ -1,0 +1,43 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Sali.DetailsModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("Detalii");
+}
+
+<h1 id="Detalii.Sala.Page">@language.Getkey("Detalii")</h1>
+
+<div>
+    <h4>@language.Getkey("Sala")</h4>
+    <hr />
+    <dl class="row">
+        <dt id="Nume.Sala" class="col-sm-2">
+            @language.Getkey("NumeSala")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sala.NumeSala)
+        </dd>
+        <dt id="Locatie.Sala" class="col-sm-2">
+            @language.Getkey("Locatie")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sala.Locatie)
+        </dd>
+        <dt id="Suprafata.Sala" class="col-sm-2">
+            @language.Getkey("Suprafata (m2)")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sala.Suprafata)
+        </dd>
+        <dt id="Pret.Sala" class="col-sm-2">
+            @language.Getkey("Pret (RON)")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Sala.Pret)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a id="Edit.Sala.Page.Lnk" asp-page="./Edit" asp-route-id="@Model.Sala?.ID">@language.Getkey("Edit")</a> |
+    <a id="Sala.Details.Inapoi.Lnk" asp-page="./Index">@language.Getkey("Inapoi")</a>
+</div>

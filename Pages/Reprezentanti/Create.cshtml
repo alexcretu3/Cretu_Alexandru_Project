@@ -1,0 +1,55 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Reprezentanti.CreateModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("Adauga");
+}
+
+
+<h1 id="Create.Reprezentant.Page">@language.Getkey("Adauga")</h1>
+
+<h4>@language.Getkey("Reprezentant")</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Reprezentant.Prenume" class="control-label">@language.Getkey("Prenume")</label>
+                <input id="Prenume.Reprezentant" asp-for="Reprezentant.Prenume" class="form-control" />
+                <span asp-validation-for="Reprezentant.Prenume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reprezentant.Nume" class="control-label">@language.Getkey("Nume")</label>
+                <input id="Nume.Reprezentant" asp-for="Reprezentant.Nume" class="form-control" />
+                <span asp-validation-for="Reprezentant.Nume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reprezentant.Adresa" class="control-label">@language.Getkey("Adresa")</label>
+                <input id="Adresa.Reprezentant" asp-for="Reprezentant.Adresa" class="form-control" />
+                <span asp-validation-for="Reprezentant.Adresa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reprezentant.Email" class="control-label">@language.Getkey("Email")</label>
+                <input id="Email.Reprezentant"  asp-for="Reprezentant.Email" class="form-control" />
+                <span asp-validation-for="Reprezentant.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reprezentant.Telefon" class="control-label">@language.Getkey("Telefon")</label>
+                <input id="Telefon.Reprezentant" asp-for="Reprezentant.Telefon" class="form-control" />
+                <span asp-validation-for="Reprezentant.Telefon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input id="Salveaza.Reprezentant.Btn" type="submit" value="@language.Getkey("Adauga")" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a id="Inapoi.Btn.Reprezentant" asp-page="Index">@language.Getkey("Inapoi")</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

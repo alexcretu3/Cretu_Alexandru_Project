@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Adauga" xml:space="preserve">
+    <value>Adauga</value>
+  </data>
+  <data name="AddEchipament" xml:space="preserve">
+    <value>Adauga un echipament</value>
+  </data>
+  <data name="AddRep" xml:space="preserve">
+    <value>Adauga un reprezentant</value>
+  </data>
+  <data name="AddRezervare" xml:space="preserve">
+    <value>Adauga o rezervare</value>
+  </data>
+  <data name="AddSala" xml:space="preserve">
+    <value>Adauga o sala</value>
+  </data>
+  <data name="AddTrupa" xml:space="preserve">
+    <value>Adauga o trupa</value>
+  </data>
+  <data name="Adresa" xml:space="preserve">
+    <value>Adresa</value>
+  </data>
+  <data name="ConfBody" xml:space="preserve">
+    <value>Când folosești serviciile noastre, ne încredințezi informațiile tale. Înțelegem că este o mare responsabilitate și ne străduim să le protejăm și să îți oferim putere de decizie în privința acestora.
+
+Scopul acestei Politici de Confidențialitate este să îți explice ce informații colectăm, de ce le colectăm și cum poți să le actualizezi, gestionezi, exporți și să le ștergi.
+
+Dacă legislația Uniunii Europene sau Regatului Unit privind protecția datelor se aplică prelucrării informațiilor tale, poți consulta secțiunea Cerințele europene de mai jos pentru a afla mai multe despre drepturile tale și conformitatea aplicatiei cu aceste legi.</value>
+  </data>
+  <data name="Confidentialitate" xml:space="preserve">
+    <value>Confidentialitate</value>
+  </data>
+  <data name="ConfPage" xml:space="preserve">
+    <value>Politica de confidentialitate</value>
+  </data>
+  <data name="Creeaza" xml:space="preserve">
+    <value>Creeaza</value>
+  </data>
+  <data name="DataInceput" xml:space="preserve">
+    <value>Data Inceput</value>
+  </data>
+  <data name="DataSfarsit" xml:space="preserve">
+    <value>Data Sfarsit</value>
+  </data>
+  <data name="Detalii" xml:space="preserve">
+    <value>Detalii</value>
+  </data>
+  <data name="Echipament" xml:space="preserve">
+    <value>Echipament</value>
+  </data>
+  <data name="Echipamente" xml:space="preserve">
+    <value>Echipamente</value>
+  </data>
+  <data name="EchipList" xml:space="preserve">
+    <value>Lista echipamentelor inregistrate</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Editare</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="HomeRezervare" xml:space="preserve">
+    <value>Rezerva o sala de muzica</value>
+  </data>
+  <data name="Inapoi" xml:space="preserve">
+    <value>Inapoi la lista</value>
+  </data>
+  <data name="Index" xml:space="preserve">
+    <value>Index</value>
+  </data>
+  <data name="Instrumente" xml:space="preserve">
+    <value>Instrumente</value>
+  </data>
+  <data name="Locatie" xml:space="preserve">
+    <value>Locatie</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>Inchiriere sali de muzica</value>
+  </data>
+  <data name="MesajSterge" xml:space="preserve">
+    <value>Esti sigur ca vrei sa stergi asta?</value>
+  </data>
+  <data name="Modifica" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="NumarPersoane" xml:space="preserve">
+    <value>Numar Persoane</value>
+  </data>
+  <data name="Nume" xml:space="preserve">
+    <value>Nume</value>
+  </data>
+  <data name="NumeSala" xml:space="preserve">
+    <value>Nume Sala</value>
+  </data>
+  <data name="NumeTrupa" xml:space="preserve">
+    <value>Nume Trupa</value>
+  </data>
+  <data name="OraInceput" xml:space="preserve">
+    <value>Ora inceput</value>
+  </data>
+  <data name="OreDorite" xml:space="preserve">
+    <value>Numar de ore solicitate</value>
+  </data>
+  <data name="Prenume" xml:space="preserve">
+    <value>Prenume</value>
+  </data>
+  <data name="Pret" xml:space="preserve">
+    <value>Pret</value>
+  </data>
+  <data name="RepList" xml:space="preserve">
+    <value>Lista reprezentantilor inregistrati</value>
+  </data>
+  <data name="Reprezentant" xml:space="preserve">
+    <value>Reprezentant</value>
+  </data>
+  <data name="Rezervare" xml:space="preserve">
+    <value>Rezervare</value>
+  </data>
+  <data name="Rezervari" xml:space="preserve">
+    <value>Rezervari</value>
+  </data>
+  <data name="RezList" xml:space="preserve">
+    <value>Lista rezervarilor inregistrate</value>
+  </data>
+  <data name="Sala" xml:space="preserve">
+    <value>Sala</value>
+  </data>
+  <data name="Sali" xml:space="preserve">
+    <value>Sali</value>
+  </data>
+  <data name="SaliList" xml:space="preserve">
+    <value>Lista salilor inregistrate</value>
+  </data>
+  <data name="Salveaza" xml:space="preserve">
+    <value>Salveaza</value>
+  </data>
+  <data name="Sterge" xml:space="preserve">
+    <value>Sterge</value>
+  </data>
+  <data name="Suprafata" xml:space="preserve">
+    <value>Suprafata</value>
+  </data>
+  <data name="Telefon" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="TipEchipament" xml:space="preserve">
+    <value>Tip Echipament</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Bine ati venit!</value>
+  </data>
+  <data name="Trupa" xml:space="preserve">
+    <value>Trupa</value>
+  </data>
+  <data name="Trupe" xml:space="preserve">
+    <value>Trupe</value>
+  </data>
+  <data name="TrupeList" xml:space="preserve">
+    <value>Lista trupelor inregistrate</value>
+  </data>
+</root>

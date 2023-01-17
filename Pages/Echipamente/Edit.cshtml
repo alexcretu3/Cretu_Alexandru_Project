@@ -1,0 +1,45 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Echipamente.EditModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("Edit");
+}
+
+<h1 id="Edit.Echipament.Page">@language.Getkey("Edit")</h1>
+
+<h4>@language.Getkey("Echipament")</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Echipament.ID" />
+            <div class="form-group">
+                <label asp-for="Echipament.TipEchipament" class="control-label">@language.Getkey("TipEchipament")</label>
+                <input id="Tip.Echipament" asp-for="Echipament.TipEchipament" class="form-control" />
+                <span asp-validation-for="Echipament.TipEchipament" class="text-danger"></span>
+            </div>
+               <div class="form-group">
+                <label asp-for="Echipament.Instrumente" class="control-label">@language.Getkey("Instrumente")</label>
+                <input id="Instrumente.Echipament" asp-for="Echipament.Instrumente" class="form-control" />
+                <span asp-validation-for="Echipament.Instrumente" class="text-danger"></span>
+            </div>
+               <div class="form-group">
+                <label asp-for="Echipament.Pret" class="control-label">@language.Getkey("Pret")</label>
+                <input id="Pret.Echipament" asp-for="Echipament.Pret" class="form-control" />
+                <span asp-validation-for="Echipament.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input id="Edit.Echipament.Btn" type="submit" value="@language.Getkey("Salveaza")" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a id="Inapoi.btn" asp-page="./Index">@language.Getkey("Inapoi")</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

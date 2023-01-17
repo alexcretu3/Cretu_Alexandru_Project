@@ -1,0 +1,10 @@
+﻿@page
+@model PrivacyModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("ConfPage");
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>@language.Getkey("ConfBody")</p>

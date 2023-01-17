@@ -1,0 +1,66 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Rezervari.IndexModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("RezList");
+}
+
+<h1 id="Rezervare.List.Page">@language.Getkey("RezList")</h1>
+
+<p>
+    <a asp-page="Create">@language.Getkey("AddRezervare")</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th id="Rezervare.Nume.Sala">
+                @language.Getkey("Nume Sala")
+            </th>
+            <th id="Rezervare.Nume.Trupa">
+                @language.Getkey("Nume Trupa")
+            </th>
+            <th id="Rezervare.Data.Inceput">
+                @language.Getkey("Data Inceput")
+            </th>
+            <th id="Rezervare.Ora.Inceput">
+                @language.Getkey("Ora Inceput")
+            </th>
+            <th id="Rezervare.Timp">
+                @language.Getkey("Ore Dorite")
+            </th>
+            <th id="Rezervare.Pret">
+                @language.Getkey("Pret (RON)")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Rezervare) {
+        <tr>
+            <td id="Rezervare.NumeSala.Value">
+                @Html.DisplayFor(modelItem => item.Sala.NumeSala)
+            </td>
+            <td id="Rezervare.NumeTrupa.Value">
+                @Html.DisplayFor(modelItem => item.Trupa.NumeTrupa)
+            </td>
+            <td id="Rezervare.DataInceput.Value">
+                @Html.DisplayFor(modelItem => item.DataInceput)
+            </td>
+            <td id="Rezervare.OraInceput.Value">
+                @Html.DisplayFor(modelItem => item.OraInceput)
+            </td>
+            <td id="Rezervare.Timp.Value">
+                @Html.DisplayFor(modelItem => item.Timp)
+            </td>
+            <td id="Rezervare.Pret.Value">
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                <a id="Rezervare.List.Edit.Lnk" asp-page="./Edit" asp-route-id="@item.ID">@language.Getkey("Edit")</a> |
+                <a id="Rezervare.List.Details.Lnk" asp-page="./Details" asp-route-id="@item.ID">@language.Getkey("Detalii")</a> |
+                <a id="Rezervare.List.Delete.Lnk" asp-page="./Delete" asp-route-id="@item.ID">@language.Getkey("Sterge")</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

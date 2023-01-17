@@ -1,0 +1,50 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Sali.CreateModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("Adauga");
+}
+
+
+<h1 id="Create.Sala.Page">@language.Getkey("Adauga")</h1>
+
+<h4>@language.Getkey("Sala")</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Sala.NumeSala" class="control-label">@language.Getkey("Nume Sala")</label>
+                <input id="Nume.Sala" asp-for="Sala.NumeSala" class="form-control" />
+                <span asp-validation-for="Sala.NumeSala" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sala.Locatie" class="control-label">@language.Getkey("Locatie")</label>
+                <input id="Locatie.Sala" asp-for="Sala.Locatie" class="form-control" />
+                <span asp-validation-for="Sala.Locatie" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sala.Suprafata" class="control-label">@language.Getkey("Suprafata (m2)")</label>
+                <input id="Suprafata.Sala" asp-for="Sala.Suprafata" class="form-control" />
+                <span asp-validation-for="Sala.Suprafata" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sala.Pret" class="control-label">@language.Getkey("Pret (RON)")</label>
+                <input id="Pret.Sala" asp-for="Sala.Pret" class="form-control" />
+                <span asp-validation-for="Sala.Pret" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input id="Salveaza.Sala.Btn" type="submit" value="@language.Getkey("Adauga")" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a id="Sala.Create.Inapoi.Lnk" asp-page="Index">@language.Getkey("Inapoi")</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

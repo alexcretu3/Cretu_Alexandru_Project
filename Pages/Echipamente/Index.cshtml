@@ -1,0 +1,48 @@
+﻿@page
+@model Cretu_Alexandru_Project.Pages.Echipamente.IndexModel
+@inject LanguageService language
+@{
+    ViewData["Title"] = @language.Getkey("EchipList");
+}
+
+<h1>@language.Getkey("EchipList")</h1>
+
+<p>
+    <a asp-page="Create">@language.Getkey("AddEchipament")</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @language.Getkey("TipEchipament")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Echipament[0].Instrumente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Echipament[0].Pret)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Echipament) {
+        <tr>
+            <td id="Echipament.TipEchipament.Value">
+                @Html.DisplayFor(modelItem => item.TipEchipament)
+            </td>
+            <td id="Echipament.Instrumente.Value">
+                @Html.DisplayFor(modelItem => item.Instrumente)
+            </td>
+            <td id="Echipament.Pret.Value">
+                @Html.DisplayFor(modelItem => item.Pret)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">@language.Getkey("Edit")</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">@language.Getkey("Detalii")</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">@language.Getkey("Sterge")</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
